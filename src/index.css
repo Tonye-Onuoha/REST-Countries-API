@@ -40,6 +40,9 @@ main {
   align-items: center;
   gap: 10px;
 }
+.theme-selector__text {
+  font-weight: 600;
+}
 
 img[alt="moon icon"] {
   width: 20px;
@@ -63,13 +66,12 @@ img[alt="moon icon"]:hover {
 input[type="text"] {
   padding: 20px 0;
   padding-left: 20%;
+  border: none;
+  border-radius: 5px;
   box-sizing: border-box;
-  background-image: url("assets/search-outline.svg");
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: 10% 50%;
-  border: 1px solid lightgray;
-  border-radius: 5px;
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -83,6 +85,14 @@ select {
   border-radius: 5px;
   border: none;
   background-color: hsl(0, 100%, 100%);
+}
+
+option {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+option:hover {
+  cursor: pointer;
 }
 
 /* Input Component -- end */
@@ -101,8 +111,6 @@ select {
 
 .country {
   border-radius: 10px;
-  border: 1px solid hsl(0, 0%, 97%);
-  box-shadow: 5px 5px 15px 10px hsl(0, 0%, 97%);
 }
 
 .country-container {
@@ -133,6 +141,53 @@ img[alt="country-flag"] {
 }
 
 /* Country Component -- end */
+
+/* Theme Styles -- start */
+
+.light-theme-element {
+  color: hsl(200, 15%, 8%);
+  background-color: hsl(0, 100%, 100%);
+  box-shadow: 5px 5px 15px 10px hsl(0, 0%, 97%);
+}
+
+input[type="text"].light-theme-element {
+  background-image: url("assets/search-outline.svg");
+}
+
+input[type="text"].light-theme-element::placeholder {
+  color: hsl(0, 0%, 50%);
+}
+
+.light-theme-font {
+  color: hsl(200, 15%, 8%);
+}
+
+.light-theme-background {
+  background-color: hsl(0, 0%, 99%);
+}
+
+.dark-theme-element {
+  color: hsl(0, 100%, 100%);
+  background-color: hsl(209, 23%, 22%);
+}
+
+input[type="text"].dark-theme-element {
+  background-image: url("assets/search-outline-white.svg");
+}
+
+input[type="text"].dark-theme-element::placeholder {
+  color: hsl(0, 100%, 100%);
+}
+
+.dark-theme-font {
+  color: hsl(0, 100%, 100%);
+}
+
+.dark-theme-background {
+  background-color: hsl(207, 26%, 17%);
+}
+
+/* Theme Styles -- end */
 
 @media screen and (min-width: 780px) {
   .input-container {
