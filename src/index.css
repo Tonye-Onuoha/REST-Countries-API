@@ -1,3 +1,7 @@
+html {
+  width: 100%;
+}
+
 body {
   margin: 0;
   font-size: 14px;
@@ -59,6 +63,7 @@ img[alt="moon icon"]:hover {
 input[type="text"] {
   padding: 20px 0;
   padding-left: 20%;
+  box-sizing: border-box;
   background-image: url("assets/search-outline.svg");
   background-repeat: no-repeat;
   background-size: 30px;
@@ -101,7 +106,7 @@ select {
 }
 
 .country-container {
-  height: 250px;
+  height: 60.6796vw;
 }
 
 img[alt="country-flag"] {
@@ -128,3 +133,45 @@ img[alt="country-flag"] {
 }
 
 /* Country Component -- end */
+
+@media screen and (min-width: 780px) {
+  .input-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+  input[type="text"] {
+    width: 50%;
+    padding-left: 10%;
+  }
+  select {
+    width: 30%;
+  }
+  .country-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+  }
+  .country-container {
+    height: 32vw;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .header {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+  main {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+  select {
+    width: 20%;
+  }
+  .country-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .country-container {
+    height: 15vw;
+  }
+}
