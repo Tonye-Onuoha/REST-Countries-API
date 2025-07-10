@@ -43,7 +43,7 @@ export default function Home() {
 
         async function getCountries() {
             try {
-                const response = await fetch("/src/data.json");
+                const response = await fetch("./data.json");
                 const fetchedCountries = await response.json();
                 if (!ignore) {
                     setCountries(fetchedCountries);

@@ -8,7 +8,7 @@ export default function Details({ country }) {
     const [countries, setCountries] = useState([]);
     const { themeIsLight } = useContext(ThemeContext);
     const navigate = useNavigate();
-    const languages = country.languages.map((language) => language.name);
+    const languages = country.languages?.map((language) => language.name);
     const borderSet = new Set();
     country.borders?.forEach((countryCode) => borderSet.add(countryCode));
 
@@ -37,7 +37,7 @@ export default function Details({ country }) {
 
         async function getCountries() {
             try {
-                const response = await fetch("http://localhost:5173/src/data.json");
+                const response = await fetch("./data.json");
                 const fetchedCountries = await response.json();
                 if (!ignore) {
                     setCountries(fetchedCountries);
@@ -95,7 +95,7 @@ export default function Details({ country }) {
                                 <b>Currencies:</b> {country.currencies?.[0].name}
                             </p>
                             <p>
-                                <b>Languages:</b> {languages.join(",")}
+                                <b>Languages:</b> {languages?.join(",")}
                             </p>
                         </div>
                     </div>
