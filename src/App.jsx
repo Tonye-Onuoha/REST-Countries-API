@@ -1,7 +1,7 @@
-import CountryDetails from "./pages/CountryDetails";
+import Layout from "./components/Layout";
 
 function App() {
-  return <CountryDetails />;
+  return <Layout />;
 }
 
 export default App;

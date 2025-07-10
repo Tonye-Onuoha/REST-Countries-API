@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { ThemeIsLightContext } from "./ThemeContext";
+import { ThemeContext } from "../utils/ThemeContext";
 import lightMoonImage from "../assets/moon-outline.svg";
 import darkMoonImage from "../assets/moon-outline-white.svg";
 
 export default function Header() {
-    const { themeIsLight, onChangeTheme } = useContext(ThemeIsLightContext);
+    const { themeIsLight, onChangeTheme } = useContext(ThemeContext);
 
     return (
         <header className={themeIsLight ? "header light-theme-element" : "header dark-theme-element"}>

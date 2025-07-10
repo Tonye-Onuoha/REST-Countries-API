@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { ThemeIsLightContext } from "./ThemeContext";
+import { ThemeContext } from "../utils/ThemeContext";
 
 export default function Input({ onSearch, onFilter }) {
-    const { themeIsLight } = useContext(ThemeIsLightContext);
+    const { themeIsLight } = useContext(ThemeContext);
 
     return (
         <div className="input-container">
@@ -21,6 +21,7 @@ export default function Input({ onSearch, onFilter }) {
                 <option value="filter" disabled>
                     Filter by Region
                 </option>
+                <option value="show all">Show All</option>
                 <option value="africa">Africa</option>
                 <option value="americas">Americas</option>
                 <option value="asia">Asia</option>
