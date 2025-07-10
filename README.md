@@ -25,7 +25,7 @@ switcher" solution.
 
 ### Links
 
--   Live Site URL: [Vercel](https://product-list-with-cart-five-neon.vercel.app)
+-   Live Site URL: [Vercel](https://rest-countries-api-ruddy-beta.vercel.app)
 
 ## My process
 
