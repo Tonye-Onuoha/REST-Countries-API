@@ -37,7 +37,7 @@ export default function Details({ country }) {
 
         async function getCountries() {
             try {
-                const response = await fetch("./data.json");
+                const response = await fetch("https://rest-countries-api-ruddy-beta.vercel.app/data.json");
                 const fetchedCountries = await response.json();
                 if (!ignore) {
                     setCountries(fetchedCountries);
