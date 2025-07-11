@@ -4,6 +4,6 @@ import { useLoaderData } from "react-router";
 
 export default function CountryDetails() {
     // loader data is available in components through useLoaderData
-    const country = useLoaderData();
-    return <Details country={country} />;
+    const { country, countries } = useLoaderData();
+    return <Details country={country} countries={countries} />;
 }
