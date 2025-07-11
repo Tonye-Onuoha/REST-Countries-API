@@ -43,7 +43,7 @@ export default function Home() {
 
         async function getCountries() {
             try {
-                const response = await fetch("./data.json");
+                const response = await fetch("https://rest-countries-api-bice-xi.vercel.app/data.json");
                 const fetchedCountries = await response.json();
                 if (!ignore) {
                     setCountries(fetchedCountries);
