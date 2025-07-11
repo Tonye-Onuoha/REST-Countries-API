@@ -1,4 +1,3 @@
-import Layout from "../components/Layout";
 import Details from "../components/Details";
 import { useLoaderData } from "react-router";
 

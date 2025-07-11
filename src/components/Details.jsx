@@ -16,12 +16,12 @@ export default function Details({ country, countries }) {
     if (borderSet.size === 0) {
         borderCountries = <p>N/A</p>;
     } else {
-        borderCountries = countries.map((country) => {
-            if (borderSet.has(country.alpha3Code)) {
+        borderCountries = countries.map((c) => {
+            if (borderSet.has(c.alpha3Code)) {
                 return (
-                    <Link key={country.name} to={`/details/${country.name}`}>
+                    <Link key={c.name} to={`/details/${c.name}`}>
                         <button className={themeIsLight ? "light-theme-button" : "dark-theme-button"} type="button">
-                            {country.name}
+                            {c.name}
                         </button>
                     </Link>
                 );
