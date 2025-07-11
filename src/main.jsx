@@ -5,9 +5,9 @@ import App from "./App.jsx";
 import Home from "./pages/Home";
 import CountryDetails from "./pages/CountryDetails";
 import countryLoader from "./utils/countryLoader";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createHashRouter, RouterProvider } from "react-router";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     Component: App,
