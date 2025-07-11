@@ -1,11 +1,10 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { ThemeContext } from "../utils/ThemeContext";
 import darkLeftArrow from "../assets/arrow-back-outline.svg";
 import lightLeftArrow from "../assets/arrow-back-outline-white.svg";
 import { Link, useNavigate } from "react-router";
 
-export default function Details({ country }) {
-    const [countries, setCountries] = useState([]);
+export default function Details({ country, countries }) {
     const { themeIsLight } = useContext(ThemeContext);
     const navigate = useNavigate();
     const languages = country.languages?.map((language) => language.name);
@@ -31,27 +30,6 @@ export default function Details({ country }) {
     }
 
     const handleBackButton = () => navigate(-1);
-
-    useEffect(() => {
-        let ignore = false;
-
-        async function getCountries() {
-            try {
-                const response = await fetch("https://rest-countries-api-bice-xi.vercel.app/data.json");
-                const fetchedCountries = await response.json();
-                if (!ignore) {
-                    setCountries(fetchedCountries);
-                }
-            } catch (error) {
-                alert(error.message);
-                console.error("Details Error:", error.message);
-            }
-        }
-
-        getCountries();
-
-        return () => (ignore = true);
-    }, []);
 
     return (
         <div className="country-details">
