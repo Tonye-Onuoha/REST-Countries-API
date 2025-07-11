@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import Input from "../components/Input";
 import CountryList from "../components/CountryList";
+import { saveCountries } from "../utils/countriesStore";
 
 export default function Home() {
     const [countries, setCountries] = useState([]);
@@ -43,10 +44,11 @@ export default function Home() {
 
         async function getCountries() {
             try {
-                const response = await fetch("https://rest-countries-api-bice-xi.vercel.app/data.json");
+                const response = await fetch("/data.json");
                 const fetchedCountries = await response.json();
                 if (!ignore) {
                     setCountries(fetchedCountries);
+                    saveCountries("countries", fetchedCountries);
                 }
             } catch (error) {
                 console.error(error.message);
@@ -57,8 +59,9 @@ export default function Home() {
         }
 
         getCountries();
-
-        return () => (ignore = true);
+        return () => {
+            ignore = true;
+        };
     }, []);
 
     return (
