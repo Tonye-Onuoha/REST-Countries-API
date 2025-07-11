@@ -43,11 +43,13 @@ main {
   font-weight: 600;
 }
 
-img[alt="moon icon"] {
+img[alt="moon icon"],
+img[alt="sun icon"] {
   width: 20px;
 }
 
-img[alt="moon icon"]:hover {
+img[alt="moon icon"]:hover,
+img[alt="sun icon"]:hover {
   cursor: pointer;
 }
 
