@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Layout from "../components/Layout";
 import Input from "../components/Input";
 import CountryList from "../components/CountryList";
 import { saveCountries } from "../utils/countriesStore";
@@ -50,8 +49,8 @@ export default function Home() {
                     setCountries(fetchedCountries);
                     saveCountries("countries", fetchedCountries);
                 }
-            } catch (error) {
-                console.error(error.message);
+            } catch (e) {
+                console.error(e.message);
                 setError("Error! Unable to load countries.");
             } finally {
                 setIsLoading(false);
