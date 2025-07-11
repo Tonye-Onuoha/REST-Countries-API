@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../utils/ThemeContext";
 import darkLeftArrow from "../assets/arrow-back-outline.svg";
 import lightLeftArrow from "../assets/arrow-back-outline-white.svg";
